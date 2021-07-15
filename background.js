@@ -16,6 +16,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     const tau = (halflife * millisInDay) / ln2;
     const p = dt / tau;
     const tabs = await chrome.tabs.query({
+      active: false,
       autoDiscardable: true,
       pinned: false,
     });
